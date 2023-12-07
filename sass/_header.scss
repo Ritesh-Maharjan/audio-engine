@@ -1,4 +1,26 @@
 header{ 
-    display: flex;
     background-color: black;
 }
+
+nav{
+
+
+    li{
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        i :hover{
+            color: orange;
+        }
+    }
+    
+    li :hover {
+        background-color: grey;
+    }
+}
+
+i{
+    display: flex;
+    flex-direction: row;
+}
+

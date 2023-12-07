@@ -1,5 +1,8 @@
+@use "variable" as *;
+
 header{ 
-    background-color: black;
+    background-color: $bg-color;
+    padding: 1rem 0 0 1rem;
 }
 
 nav{
@@ -8,19 +11,34 @@ nav{
     li{
         text-decoration: none;
         list-style: none;
-        color: white;
-        i :hover{
-            color: orange;
+        color: $text-color;
+        padding: 0 0 1rem 1rem;
+        i:hover{
+            color: $button-color;
+            background-color: black;
         }
     }
+
+    li:hover:last-child{
+        background-color: black;
+    }
+
+    li:last-child{
+        padding-bottom: 5px;
+    }
     
-    li :hover {
-        background-color: grey;
+    li:first-child{
+        padding-top: 1rem;
+    }
+    
+    li:hover {
+        background-color: $header-color;
     }
 }
 
 i{
     display: flex;
     flex-direction: row;
+    padding: 0.5rem;
 }
 

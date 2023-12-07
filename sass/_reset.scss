@@ -1,31 +1,32 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 // Resets
 
 // Box Sizing Reset
 html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
-  
-  // Image Reset
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  // Table Reset
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+// Image Reset
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+// Table Reset
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

@@ -1,4 +1,64 @@
+@use "variable" as *;
+
 header{ 
+    background-color: $bg-color;
+    padding: 1rem 1rem 0 1rem;
     display: flex;
-    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    .menu{
+        width: 2rem;
+        position: relative;
+        border: 1px solid white;
+        outline: 0;
+
+        @mixin menuOpen(){
+            content: "";
+            width: 100%;
+            top: 1rem;
+            position:absolute;
+            border: 1px solid white;
+        }
+        &::after{
+            @include menuOpen()
+            
+        }
+    }
 }
+
+nav{
+    display: none;
+
+    li{
+        text-decoration: none;
+        list-style: none;
+        color: $text-color;
+        padding: 1rem 0 1rem 1rem;
+        i:hover{
+            color: $button-color;
+            background-color: black;
+        }
+    }
+
+    li:hover:last-child{
+        background-color: black;
+    }
+
+    li:last-child{
+        padding-bottom: 5px;
+    }
+    
+    li:first-child{
+        padding-top: 1rem;
+    }
+    
+    li:hover {
+        background-color: $header-color;
+    }
+}
+
+i{
+    display: flex;
+}
+

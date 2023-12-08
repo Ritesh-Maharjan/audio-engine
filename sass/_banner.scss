@@ -1,4 +1,5 @@
 @use "variable" as *;
+@use "mixins" as *;
 
 .banner {
   position: relative;
@@ -11,6 +12,7 @@
   img {
     z-index: 1;
     min-width: 100%;
+    height: auto;
   }
 
   // the arrows inside banner
@@ -51,6 +53,10 @@
       border: 4px solid $button-color;
       border-radius: 50%;
       opacity: 50%;
+
+      @include mq($tablet) {
+        border: 8px solid $button-color;
+      }
     }
 
     .active {
@@ -60,5 +66,43 @@
 
   .banner-text {
     display: none;
+
+    @include mq($tablet) {
+      display: block;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        top: 2rem;
+        right: 0;
+        padding: 2rem;
+        background-color: #ffffff8b;
+        letter-spacing: 2px;
+        max-width: 400px;
+
+        h1 {
+          color: $header-color;
+          text-transform: uppercase;
+        }
+
+        a {
+          @include button();
+        }
+      }
+    }
+
+    @include mq($laptop) {
+      font-size: 2rem;
+
+      div {
+        max-width: 500px;
+
+        a{
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 }

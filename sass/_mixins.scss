@@ -1,7 +1,17 @@
 @use "variable" as *;
 
 @mixin mq($w) {
-    @media (min-width: $w) {
-        @content;
-    }
+  @media (min-width: $w) {
+    @content;
+  }
+}
+
+@mixin button() {
+  background-color: $button-color;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  text-decoration: none;
+  width: fit-content;
+  border-radius: 4px;
 }

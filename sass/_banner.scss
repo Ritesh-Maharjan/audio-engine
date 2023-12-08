@@ -1,6 +1,7 @@
 @use "variable" as *;
 
 .banner {
+  overflow: hidden;
   position: relative;
 
   .image-container {
@@ -9,6 +10,7 @@
   }
   img {
     z-index: 1;
+    min-width: 100vw;
   }
 
   // the arrows inside banner

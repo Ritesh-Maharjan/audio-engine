@@ -8,17 +8,26 @@
   .image-container {
     display: flex;
     transition: 0.3s ease-in;
-  }
-  img {
-    z-index: 1;
-    min-width: 100%;
-    height: auto;
+
+    img {
+      z-index: 1;
+      min-width: 100%;
+      max-height: 95vh;
+    }
   }
 
   // the arrows inside banner
   .fa-solid {
     color: $button-color;
     font-size: 1.5rem;
+
+    @include mq($tablet) {
+      font-size: 2rem;
+    }
+
+    @include mq($laptop) {
+      font-size: 3rem;
+    }
   }
 
   @mixin position($property) {
@@ -67,6 +76,12 @@
   .banner-text {
     display: none;
 
+    p {
+      color: $header-color;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
     @include mq($tablet) {
       display: block;
 
@@ -79,12 +94,12 @@
         right: 0;
         padding: 2rem;
         background-color: #ffffff8b;
-        letter-spacing: 2px;
-        max-width: 400px;
+        max-width: 450px;
 
         h1 {
           color: $header-color;
           text-transform: uppercase;
+          font-size: 2.5rem;
         }
 
         a {
@@ -94,12 +109,18 @@
     }
 
     @include mq($laptop) {
-      font-size: 2rem;
-
       div {
         max-width: 500px;
 
-        a{
+        h1 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 2.5rem;
+        }
+
+        a {
           font-size: 1.5rem;
         }
       }

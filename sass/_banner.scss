@@ -1,8 +1,8 @@
 @use "variable" as *;
 
 .banner {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 
   .image-container {
     display: flex;
@@ -10,7 +10,7 @@
   }
   img {
     z-index: 1;
-    min-width: 100vw;
+    min-width: 100%;
   }
 
   // the arrows inside banner

@@ -1,4 +1,5 @@
 @use "variable" as *;
+@use "mixins" as *;
 
 header{ 
     background-color: $bg-color;
@@ -87,10 +88,24 @@ header{
         top: 0;
         transform: rotate(-45deg);	
     } 
+
+    @include mq($laptop){
+        .btn-menu{
+            display: none;
+        }
+    }
 }
 
 nav{
     display: none;
+
+    ul{
+        @include mq($laptop){
+            display: block;
+            display: flex;
+            flex-direction: row;
+        }
+    }
 
     li{
         text-decoration: none;
@@ -117,6 +132,14 @@ nav{
     
     li:hover {
         background-color: $header-color;
+    }
+
+    @include mq($laptop){
+
+        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 

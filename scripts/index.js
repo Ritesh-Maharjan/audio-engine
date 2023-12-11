@@ -60,3 +60,21 @@ bannerRight.addEventListener("click", (e) => {
   //   assinging active elements to the new element that is active
   activeClass = spanCircle[targetedNum];
 });
+
+
+// header
+const body = document.body;
+const btnMenu = document.getElementById("btn-menu");
+// const nav = document.getElementById("main-navigation");
+
+btnMenu.addEventListener('click', openMenu);
+btnMenu.addEventListener('mousedown', function(e){
+  e.preventDefault();
+});
+
+function openMenu(){
+  body.classList.toggle('show');
+  body.classList.add('animating');
+  // nav.classList.add('activated');
+}
+

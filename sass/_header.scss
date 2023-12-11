@@ -1,4 +1,5 @@
 @use "variable" as *;
+@use "mixins" as *;
 
 header{ 
     background-color: $bg-color;
@@ -103,9 +104,9 @@ nav{
         }
     }
 
-    li:hover:last-child{
-        background-color: black;
-    }
+  li:hover:last-child {
+    background-color: black;
+  }
 
     li:last-child{
         padding-bottom: 5px;
@@ -120,7 +121,14 @@ nav{
     }
 }
 
-i{
+  @include mq($laptop) {
+    display: block;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
+i {
+  display: flex;
+}

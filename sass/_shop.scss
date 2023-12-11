@@ -1,0 +1,72 @@
+@use "variable" as *; 
+@use "mixins" as *; 
+
+.shop-slider{ 
+    display:flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .fa-less-than, 
+    .fa-greater-than { 
+        display: none;
+    }
+
+    @include mq($tablet){
+        width: auto;
+
+        .fa-less-than, 
+        .fa-greater-than { 
+            display: block;
+        }
+     }
+}
+
+
+.shop-by-cards{ 
+    position:relative; 
+    // transition: 0.3s ease-in;
+    overflow: hidden;
+    margin: 0.5rem;
+    width: 45%;
+   
+
+    img{ 
+        border-radius: 50%;
+        display: block;
+        object-fit: cover;
+        z-index: 0; 
+        filter: brightness(60%); 
+    }
+
+    p{ 
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transform: translateY(-50%);
+        margin: 0;
+        color: #fff;
+        // font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    @include mq($tablet){
+        width: auto;
+
+        p{ 
+            font-size: 1.5rem;
+        }
+     }
+
+     @include mq($laptop){
+        width: auto;
+
+        p{ 
+            font-size: 2rem;
+        }
+     }
+
+}

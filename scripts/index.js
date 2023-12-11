@@ -65,7 +65,7 @@ bannerRight.addEventListener("click", (e) => {
 // header
 const body = document.body;
 const btnMenu = document.getElementById("btn-menu");
-const nav = document.getElementById("main-navigation");
+// const nav = document.getElementById("main-navigation");
 
 btnMenu.addEventListener('click', openMenu);
 btnMenu.addEventListener('mousedown', function(e){
@@ -75,6 +75,6 @@ btnMenu.addEventListener('mousedown', function(e){
 function openMenu(){
   body.classList.toggle('show');
   body.classList.add('animating');
-  nav.classList.add('activated');
+  // nav.classList.add('activated');
 }
 

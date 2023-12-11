@@ -65,6 +65,7 @@ bannerRight.addEventListener("click", (e) => {
 // header
 const body = document.body;
 const btnMenu = document.getElementById("btn-menu");
+const mainNav = document.getElementById("main-navigation");
 // const nav = document.getElementById("main-navigation");
 
 btnMenu.addEventListener('click', openMenu);
@@ -78,3 +79,8 @@ function openMenu(){
   // nav.classList.add('activated');
 }
 
+window.addEventListener("resize", function(){
+  if (window.innerWidth >= 1200) body.classList.add("show");
+
+  if(window.innerWidth < 1200) body.classList.remove("show");
+})

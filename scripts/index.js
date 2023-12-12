@@ -6,8 +6,11 @@ let activeClass = document.getElementsByClassName("active")[0];
 const bannerLeft = document.getElementById("bannerLeft");
 const bannerRight = document.getElementById("bannerRight");
 
-console.log(activeClass);
-
+const openVideo = document.getElementById("openVideo");
+const videoContainer = document.getElementsByClassName("video-container")[0];
+const closeVideo = document.getElementById("closeVideo");
+const video = document.getElementsByTagName("video")[0];
+console.log(video);
 Array.from(spanCircle).forEach((el) => {
   // adding event listener to all the dots
   el.addEventListener("click", (e) => {
@@ -61,26 +64,35 @@ bannerRight.addEventListener("click", (e) => {
   activeClass = spanCircle[targetedNum];
 });
 
-
 // header
 const body = document.body;
 const btnMenu = document.getElementById("btn-menu");
 const mainNav = document.getElementById("main-navigation");
 // const nav = document.getElementById("main-navigation");
 
-btnMenu.addEventListener('click', openMenu);
-btnMenu.addEventListener('mousedown', function(e){
+btnMenu.addEventListener("click", openMenu);
+btnMenu.addEventListener("mousedown", function (e) {
   e.preventDefault();
 });
 
-function openMenu(){
-  body.classList.toggle('show');
-  body.classList.add('animating');
+function openMenu() {
+  body.classList.toggle("show");
+  body.classList.add("animating");
   // nav.classList.add('activated');
 }
 
-window.addEventListener("resize", function(){
+window.addEventListener("resize", function () {
   if (window.innerWidth >= 1200) body.classList.add("show");
 
-  if(window.innerWidth < 1200) body.classList.remove("show");
-})
+  if (window.innerWidth < 1200) body.classList.remove("show");
+});
+
+openVideo.addEventListener("click", () => {
+  videoContainer.style.display = "block";
+});
+
+closeVideo.addEventListener("click", () => {
+  videoContainer.style.display = "none";
+  video.currentTime = 0;
+  video.pause();
+});

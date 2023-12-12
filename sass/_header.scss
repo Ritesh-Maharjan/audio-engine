@@ -1,125 +1,150 @@
 @use "variable" as *;
 @use "mixins" as *;
 
-header{ 
-    background-color: $bg-color;
-    padding: 1rem 1rem 0 1rem;
+header {
+  background-color: $bg-color;
+  padding: 1rem 1rem 0 1rem;
+
+  .btn-menu {
+    margin: 0 20px 20px 0;
+    display: block;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .btn-menu .button-content {
+    display: block;
+    height: 24px;
+    cursor: pointer;
+    padding-top: 10px;
+  }
+
+  .btn-menu .text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .btn-menu .bar {
+    display: block;
+    height: 4px;
+    background-color: white;
+    width: 100%;
+    position: relative;
+    top: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-menu .bar:before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    top: 10px;
+    left: 0;
+    background-color: white;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-menu .bar:after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    top: -10px;
+    left: 0;
+    background-color: white;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-menu:focus {
+    outline: none;
+  }
+
+  .btn-menu:focus .button-content {
+    outline: 5px solid #7683c9;
+  }
+
+  .show .btn-menu .bar {
+    background-color: transparent;
+  }
+
+  .show .btn-menu .bar:before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .show .btn-menu .bar:after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  @include mq($laptop) {
+    .btn-menu {
+      display: none;
+    }
+  }
+
+  @include mq ($laptop){
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    .btn-menu {
-        margin: 0 20px 20px 0;
-        display: block;
-        width: 40px;
-        background-color: transparent;
-        border: none;
-        padding: 0;
-    }
-    
-    .btn-menu .button-content {
-        display: block;
-        height: 24px;
-        cursor: pointer;
-        padding-top: 10px;
-    }
-    
-    .btn-menu .text {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0,0,0,0);
-        border: 0;
-    }
-    
-    .btn-menu .bar {
-        display: block;
-        height: 4px;
-        background-color: white;
-        width: 100%;
-        position: relative;
-        top: 10px;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .btn-menu .bar:before {
-        content: "";
-        width: 100%;
-        height: 4px;
-        top: 10px;
-        left: 0;
-        background-color: white;
-        position: absolute;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .btn-menu .bar:after {
-        content: "";
-        width: 100%;
-        height: 4px;
-        top: -10px;
-        left: 0;
-        background-color: white;
-        position: absolute;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .btn-menu:focus {
-        outline: none;
-    }
-    
-    .btn-menu:focus .button-content {
-        outline: 5px solid #7683C9;
-    }
-    
-    .show .btn-menu .bar {
-        background-color: transparent;	
-    }
-    
-    .show .btn-menu .bar:before {
-        top: 0;
-        transform: rotate(45deg);	
-    }
-    
-    .show .btn-menu .bar:after {
-        top: 0;
-        transform: rotate(-45deg);	
-    } 
+    z-index: 100;
+  }
 }
 
-nav{
-    display: none;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    li{
-        text-decoration: none;
-        list-style: none;
-        color: $text-color;
-        padding: 1rem 0 1rem 1rem;
-        i:hover{
-            color: $button-color;
-            background-color: black;
-        }
+nav {
+  padding: 1rem 0;
+  height: 0;
+  transition: all 0.5s ease-in;
+
+  .show & {
+    height: auto;
+  }
+
+  ul {
+    @include mq($laptop) {
+      display: block;
+      display: flex;
+      flex-direction: row;
     }
+  }
+
+  li {
+    text-decoration: none;
+    list-style: none;
+    color: $text-color;
+    padding: 1rem;
+    i:hover {
+      color: $button-color;
+      background-color: black;
+    }
+  }
 
   li:hover:last-child {
     background-color: black;
   }
 
-    li:last-child{
-        padding-bottom: 5px;
-    }
-    
-    li:first-child{
-        padding-top: 1rem;
-    }
-    
-    li:hover {
-        background-color: $header-color;
-    }
-}
+  li:last-child {
+    padding-bottom: 5px;
+  }
+
+
+  li:hover {
+    background-color: $header-color;
+  }
 
   @include mq($laptop) {
     display: block;

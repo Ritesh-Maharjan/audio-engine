@@ -1,0 +1,37 @@
+@use "variable" as *;
+@use "mixins" as *;
+
+.socials {
+  padding: 1rem;
+
+  @include mq($laptop) {
+    padding: 1rem 3rem;
+  }
+
+  div:first-child {
+    font-weight: bold;
+    color: $button-color;
+  }
+
+  ul {
+    display: flex;
+    margin: 1rem 0;
+    li {
+      list-style: none;
+      font-size: 2rem;
+
+      @include mq($laptop) {
+        font-size: 3rem;
+      }
+    }
+
+    &:last-child li {
+      color: $footer-text-color;
+    }
+  }
+
+  div:last-child {
+    display: flex;
+    justify-content: space-between;
+  }
+}

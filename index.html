@@ -25,7 +25,7 @@
           <span class="button-content">
             <span class="text">menu</span>
             <span class="bar"></span>
-          </span>
+              </span>
         </button>
       </div>
       <nav class="main-navigation">
@@ -284,9 +284,23 @@
       </article>
 
       <section class="video">
-        <video src="./media/this-is-audioengine.mp4" controls>
-          Your browser does not support the video tag.
-        </video>
+        <div class="video-placeholder">
+          <img
+            src="./images/bg-this-is-audio-engine-section.jpg"
+            alt="guy pointing both hands to the left"
+          />
+          <h2>THIS IS AUDIO ENGINE</h2>
+          <i class="fa-solid fa-play"></i>
+        </div>
+
+        <div class="video-container">
+          <div class="video-border">
+            <button id="closeVideo">Close</button>
+            <video src="./media/this-is-audioengine.mp4" controls>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </section>
     </main>
 

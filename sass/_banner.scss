@@ -18,16 +18,7 @@
 
   // the arrows inside banner
   .fa-solid {
-    color: $button-color;
-    font-size: 1.5rem;
-
-    @include mq($tablet) {
-      font-size: 2rem;
-    }
-
-    @include mq($laptop) {
-      font-size: 3rem;
-    }
+    @include arrow();
   }
 
   @mixin position($property) {

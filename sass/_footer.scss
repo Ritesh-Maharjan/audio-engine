@@ -3,4 +3,36 @@
 
 .footer{
     background-color: $footer-color;
+    padding: 3rem;
+    border-top: 1px solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mq($tablet){
+        .footer{
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+    }
+
+    @include mq($tablet){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    li{
+        text-decoration: none;
+        list-style-type: none;
+        font-weight: 500;
+        width: 150px;
+        padding-bottom: 0.5rem;
+    }
+
+    @include mq($tablet){
+        li{
+            width: 100px;
+        }
+    }
+
 }

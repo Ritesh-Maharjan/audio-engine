@@ -1,0 +1,136 @@
+@use "variable" as *;
+@use "mixins" as *;
+
+
+.feature-cards{ 
+    position: relative;
+    margin:0; 
+
+    picture{
+        min-width:100%; 
+        z-index: 0;
+        filter: brightness(50%); 
+        display:block; 
+        line-height: 0;
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        background-position: center;
+        display: flex;
+
+        img {
+            object-fit: cover; 
+            height: auto;
+            width:100%;
+           }
+    }
+    
+    // feature products
+    .feature-text{ 
+        position: absolute; 
+        top: 25px;
+        left: 25px;
+        z-index: 1; 
+        color:white; 
+        font-size: 1rem;
+
+        a { 
+            display: block;
+            background-color:white;
+            color:gray; 
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem; 
+            text-align: center;
+            max-width: 125px;
+            width: 100%;
+            margin-top: 1rem;
+            text-transform: uppercase;
+        }
+    }
+
+    // OUR story 
+    .story-text{ 
+        position: absolute; 
+        top: 50%; 
+        z-index: 1; 
+        color:white; 
+        text-align: center;
+        display: flex;
+        flex-direction: column ;
+        padding: 2rem;
+        margin:0 auto;
+        align-items: center;
+        transform: translateY(-50%);
+        row-gap:10px; 
+
+        h2{ 
+            font-size:2rem; 
+        }
+
+        a { 
+            display: block;
+            background-color:$button-color;
+            color:white; 
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem; 
+            text-align: center;
+            max-width: 150px;
+            // width: 100%;
+            margin: 0.5rem auto 0 auto; 
+            text-transform: uppercase;
+        }
+
+        @include mq($tablet){ 
+            max-width: 700px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            row-gap:20px; 
+    
+            h2{ 
+                font-size: 1.5rem;
+            }
+            
+            a{ 
+                max-width: 500px;
+            }
+        }
+        @include mq($laptop){ 
+            max-width: 700px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            row-gap:30px; 
+    
+            h2{ 
+                font-size: 2.5rem;
+            }
+    
+            p,
+            a{ 
+                font-size: 2rem;
+            }
+            
+            a{ 
+                max-width: 600px;
+            }
+        }
+    }
+
+    @include mq(425px){ 
+        h2, 
+        p{ 
+            font-size:1.5rem; 
+        }
+
+        a{ 
+            display: block;
+            max-width: 200px;
+        }
+    }
+
+    
+
+
+
+}

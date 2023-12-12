@@ -1,0 +1,6 @@
+@use "variable" as *;
+@use "mixins" as *;
+
+.footer{
+    background-color: $footer-color;
+}

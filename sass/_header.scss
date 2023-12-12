@@ -3,7 +3,7 @@
 
 header {
   background-color: $bg-color;
-  padding: 1rem 1rem 0 1rem;
+  padding: 0rem;
 
   .btn-menu {
     margin: 0 20px 20px 0;
@@ -96,6 +96,7 @@ header {
     display: flex;
     justify-content: space-between;
     z-index: 100;
+    padding: 1rem;
   }
 }
 
@@ -103,15 +104,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 
 nav {
-  padding: 1rem 0;
   height: 0;
   transition: all 0.5s ease-in;
 
   .show & {
     height: auto;
+    padding-bottom: 1rem;
   }
 
   ul {
@@ -151,9 +153,12 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 0;
+
   }
 }
 
 i {
   display: flex;
+  margin: 0 0.5rem 0 0.5rem;
 }

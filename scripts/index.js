@@ -1,84 +1,69 @@
-$(document).ready(function () {
-  callSlick(".shop-slider", ".shop-prev", ".shop-next");
-  callSlick(".news-slider", ".news-prev", ".news-next");
+$(function () {
+  // Function to handle Slick initialization or destruction based on window width
+  handleSlick();
 });
 
-function callSlick(divContainer, prevBtn, nextBtn) {
-  $(divContainer).slick({
-    centerMode: true,
-    centerPadding: "60px",
-    slidesToShow: 5,
-    prevArrow: $(prevBtn),
-    nextArrow: $(nextBtn),
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: "40px",
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 500,
-        settings: "unslick",
-      },
-    ],
-  });
+function handleSlick() {
+  const windowWidth = $(window).width();
+
+  callSlick(windowWidth, ".shop-slider", ".shop-prev", ".shop-next");
+  callSlick(windowWidth, ".news-slider", ".news-prev", ".news-next");
 }
 
-const newsSetting = {
-  centerMode: true,
-  centerPadding: "60px",
-  slidesToShow: 5,
-  prevArrow: $(".news-prev"),
-  nextArrow: $(".news-next"),
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: "40px",
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 500,
-      settings: "unslick",
-    },
-  ],
-};
-const shopSetting = {
-  centerMode: true,
-  centerPadding: "60px",
-  slidesToShow: 5,
-  prevArrow: $(".shop-prev"),
-  nextArrow: $(".shop-next"),
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: "40px",
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 500,
-      settings: "unslick",
-    },
-  ],
-};
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 500) {
-    $(".shop-slider").not(".slick-initialized").slick(shopSetting);
-    $(".news-slider").not(".slick-initialized").slick(newsSetting);
-  }
+// Check window size on resize
+$(window).resize(function () {
+  handleSlick();
 });
+
+function callSlick(windowWidth, divContainer, prevBtn, nextBtn) {
+  if (windowWidth >= 500) {
+    // Initialize Slick slider if it's not initialized
+    if (!$(divContainer).hasClass("slick-initialized")) {
+      $(divContainer).slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 826,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+        prevArrow: $(prevBtn),
+        nextArrow: $(nextBtn),
+      });
+    }
+  } else {
+    // Check if the slider is initialized before unslicking
+    if ($(divContainer).hasClass("slick-initialized")) {
+      $(divContainer).slick("unslick");
+    }
+  }
+  // $(divContainer).slick({
+  //   centerMode: true,
+  //   centerPadding: "60px",
+  //   slidesToShow: 5,
+  //   prevArrow: $(prevBtn),
+  //   nextArrow: $(nextBtn),
+  //   responsive: [
+  //     {
+  //       breakpoint: 1200,
+  //       settings: {
+  //         // arrows: false,
+  //         // centerMode: true,
+  //         // centerPadding: "40px",
+  //         slidesToShow: 3,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 500,
+  //       settings: "unslick",
+  //     },
+  //   ],
+  // });
+}
 
 const bannerImg = document.getElementsByClassName("banner-img")[0];
 const spanCircle = document.getElementsByClassName("circles")[0].children;

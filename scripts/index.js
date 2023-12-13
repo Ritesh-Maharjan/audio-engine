@@ -1,3 +1,85 @@
+$(document).ready(function () {
+  callSlick(".shop-slider", ".shop-prev", ".shop-next");
+  callSlick(".news-slider", ".news-prev", ".news-next");
+});
+
+function callSlick(divContainer, prevBtn, nextBtn) {
+  $(divContainer).slick({
+    centerMode: true,
+    centerPadding: "60px",
+    slidesToShow: 5,
+    prevArrow: $(prevBtn),
+    nextArrow: $(nextBtn),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: "unslick",
+      },
+    ],
+  });
+}
+
+const newsSetting = {
+  centerMode: true,
+  centerPadding: "60px",
+  slidesToShow: 5,
+  prevArrow: $(".news-prev"),
+  nextArrow: $(".news-next"),
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: "40px",
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 500,
+      settings: "unslick",
+    },
+  ],
+};
+const shopSetting = {
+  centerMode: true,
+  centerPadding: "60px",
+  slidesToShow: 5,
+  prevArrow: $(".shop-prev"),
+  nextArrow: $(".shop-next"),
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: "40px",
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 500,
+      settings: "unslick",
+    },
+  ],
+};
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 500) {
+    $(".shop-slider").not(".slick-initialized").slick(shopSetting);
+    $(".news-slider").not(".slick-initialized").slick(newsSetting);
+  }
+});
+
 const bannerImg = document.getElementsByClassName("banner-img")[0];
 const spanCircle = document.getElementsByClassName("circles")[0].children;
 const imgContainer = document.getElementsByClassName("image-container")[0];
@@ -10,7 +92,6 @@ const openVideo = document.getElementById("openVideo");
 const videoContainer = document.getElementsByClassName("video-container")[0];
 const closeVideo = document.getElementById("closeVideo");
 const video = document.getElementsByTagName("video")[0];
-console.log(video);
 Array.from(spanCircle).forEach((el) => {
   // adding event listener to all the dots
   el.addEventListener("click", (e) => {

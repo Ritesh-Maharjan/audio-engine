@@ -46,8 +46,13 @@
 
     .slick-track {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       gap: 3rem;
+
+      @include mq($tablet){
+        flex-direction: row;
+      }
     }
   }
 }

@@ -11,11 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <script src="./scripts/index.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/bde734fdf1.js"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
       crossorigin="anonymous"
-    ></script>
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -25,7 +35,7 @@
           <span class="button-content">
             <span class="text">menu</span>
             <span class="bar"></span>
-              </span>
+          </span>
         </button>
       </div>
       <nav class="main-navigation">
@@ -140,9 +150,10 @@
 
         <article class="shop-by">
           <h2>SHOP BY ROOM OR DEVICE</h2>
-          <div class="shop-slider">
-            <i class="fa-solid fa-less-than"></i>
+          <i class="fa-solid fa-less-than shop-prev"></i>
+          <i class="fa-solid fa-greater-than shop-next"></i>
 
+          <div class="shop-slider">
             <section class="shop-by-cards">
               <img
                 src="./images/shop-slider-01-speaker-white.jpg"
@@ -206,20 +217,20 @@
               />
               <p>BEDROOM</p>
             </section>
-
-            <i class="fa-solid fa-greater-than"></i>
           </div>
         </article>
       </section>
 
       <section class="features">
-
-        <section class="feature-cards"> 
+        <section class="feature-cards">
           <picture>
-            <source srcset="./images/bg-all-new-section-phone-square.jpg" media="(max-width:600px)">
-            <img src="./images/bg-all-new-section.jpg" alt="White speaker">
+            <source
+              srcset="./images/bg-all-new-section-phone-square.jpg"
+              media="(max-width:600px)"
+            />
+            <img src="./images/bg-all-new-section.jpg" alt="White speaker" />
           </picture>
-          
+
           <article class="feature-text">
             <h2>ALL NEW</h2>
             <p>The A5+ Wireless Speakers</p>
@@ -227,12 +238,18 @@
           </article>
         </section>
 
-        <section class="feature-cards"> 
+        <section class="feature-cards">
           <picture>
-            <source srcset="./images/bg-feeling-lucky-section-phone-square.jpg" media="(max-width:600px)">
-            <img src="./images/bg-feeling-lucky-section.jpg" alt="Brown speaker">
+            <source
+              srcset="./images/bg-feeling-lucky-section-phone-square.jpg"
+              media="(max-width:600px)"
+            />
+            <img
+              src="./images/bg-feeling-lucky-section.jpg"
+              alt="Brown speaker"
+            />
           </picture>
-          
+
           <article class="feature-text">
             <h2>ALL NEW</h2>
             <p>The A5+ Wireless Speakers</p>
@@ -240,16 +257,28 @@
           </article>
         </section>
 
-        <section class="feature-cards"> 
+        <section class="feature-cards">
           <picture>
-            <source srcset="./images/bg-our-story-section-phone-square.jpg" media="(max-width:600px)">
-            <source srcset="./images/bg-our-story-section-tablet.jpg" media="(max-width:1200px)">
-            <img src="./images/bg-our-story-section.jpg" alt="White speaker">
+            <source
+              srcset="./images/bg-our-story-section-phone-square.jpg"
+              media="(max-width:600px)"
+            />
+            <source
+              srcset="./images/bg-our-story-section-tablet.jpg"
+              media="(max-width:1200px)"
+            />
+            <img src="./images/bg-our-story-section.jpg" alt="White speaker" />
           </picture>
 
           <article class="story-text">
             <h2>OUR STORY</h2>
-            <p>Audioengine was founded with a simple goal. <br> <i>Build a speaker that sounds great, is easy to set up and use, and that makes people want to listen to music everyday. </i> </p>
+            <p>
+              Audioengine was founded with a simple goal. <br />
+              <i
+                >Build a speaker that sounds great, is easy to set up and use,
+                and that makes people want to listen to music everyday.
+              </i>
+            </p>
             <a href="#">Learn more</a>
           </article>
         </section>
@@ -257,8 +286,9 @@
 
       <article class="news">
         <h2>IN THE NEWS</h2>
+        <i class="fa-solid fa-less-than news-prev"></i>
+        <i class="fa-solid fa-greater-than news-next"></i>
         <div class="news-slider">
-          <i class="fa-solid fa-less-than"></i>
           <img
             src="./images/in-the-news-slider-01-rolling-stone.jpg"
             alt="Rolling Stone"
@@ -299,7 +329,6 @@
             src="./images/in-the-news-slider-10-pc-magazine.jpg"
             alt="PC Magazine"
           />
-          <i class="fa-solid fa-greater-than"></i>
         </div>
       </article>
 
@@ -337,7 +366,7 @@
           </ul>
 
           <ul>
-            <li><i class="fa-regular fa-envelope"></i> EMAIL SSIGN UP</li>
+            <li><i class="fa-regular fa-envelope"></i> EMAIL SIGN UP</li>
           </ul>
         </div>
       </section>
@@ -368,5 +397,25 @@
         </div>
       </section>
     </footer>
+
+    <script
+      src="https://kit.fontawesome.com/bde734fdf1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

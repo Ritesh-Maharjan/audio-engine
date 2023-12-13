@@ -1,63 +1,68 @@
-@use "variable" as *; 
-@use "mixins" as *; 
+@use "variable" as *;
+@use "mixins" as *;
 
-.shop-slider{ 
-    display:flex; 
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+.shop-by {
+  position: relative;
 
-    .fa-less-than, 
-    .fa-greater-than { 
-        display: none;
+  .fa-less-than,
+  .fa-greater-than {
+    display: none;
+  }
+
+  @include mq($tablet) {
+    .fa-less-than,
+    .fa-greater-than {
+      display: block;
+      position: absolute;
+      font-size: 4rem;
+      top: 50%;
+      margin-top: -1rem;
+      z-index: 1;
+      @include arrow();
     }
-
-    @include mq($tablet){
-        width: auto;
-
-        .fa-less-than, 
-        .fa-greater-than { 
-            display: block;
-        }
-     }
+    .fa-less-than {
+      left: 0;
+    }
+    .fa-greater-than {
+      right: 0;
+    }
+  }
 }
 
+.shop-slider {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 1rem;
+}
 
-.shop-by-cards{ 
-    position:relative; 
-    // transition: 0.3s ease-in;
-    overflow: hidden;
-    margin: 0.5rem;
-    width: 45%;
-   
+.shop-by-cards {
+  position: relative;
+  margin: 0 1rem;
+  img {
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(60%);
+  }
 
-    img{ 
-        border-radius: 50%;
-        display: block;
-        object-fit: cover;
-        z-index: 0; 
-        filter: brightness(60%); 
+  p {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @include mq($tablet) {
+    p {
+      font-size: 2rem;
     }
-
-    p{ 
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        z-index: 1;
-        transform: translateY(-50%);
-        margin: 0;
-        color: #fff;
-        // font-size: 2rem;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    @include mq($tablet){
-        width: auto;
-
-        p{ 
-            font-size: 2rem;
-        }
-     }
+  }
 }

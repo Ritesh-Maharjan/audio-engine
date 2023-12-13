@@ -4,6 +4,26 @@
 .news {
   margin: 1.5rem;
 
+  i {
+    display: none;
+
+    @include mq($tablet) {
+      display: block;
+      position: absolute;
+      z-index: 1;
+
+      @include arrow();
+    }
+  }
+
+  .fa-greater-than {
+    right: 0;
+  }
+
+  .fa-less-than {
+    left: 0;
+  }
+
   h2 {
     text-align: center;
     font-weight: 400;
@@ -24,24 +44,10 @@
       overflow: hidden;
     }
 
-    i {
-      display: none;
-
-      @include mq($tablet) {
-        display: block;
-        position: absolute;
-
-        @include arrow();
-      }
+    .slick-track {
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
     }
-
-    .fa-greater-than {
-      right: 0;
-    }
-
-    .fa-less-than {
-      left: 0;
-    }
-    
   }
 }

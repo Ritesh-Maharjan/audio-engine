@@ -24,19 +24,22 @@
             width:100%;
            }
         
-        @include mq($tablet) {
+        @include mq(700px) {
                 filter: none; 
             }
     } 
     
     // feature products
     .feature-text{ 
+
+        
         position: absolute; 
         top: 25px;
         left: 25px;
         z-index: 1; 
         color:white; 
         font-size: 1rem;
+        overflow:hidden; 
 
         a { 
             display: block;
@@ -52,85 +55,93 @@
             text-transform: uppercase;
         }
 
-    //     @include mq(700px) {
-    //         transform: translateX(25px) translateY(-25px);
-    //         display: flex;
-    //         flex-direction: column;
-    //         z-index: 2;
-    //         top: 25%;
-    //         left:55%; 
-    //         width:45%; 
-    //         padding: 1rem;
-    //         background-color: #00000081;
-    //         height:55%; 
-    //         // justify-content: space-between;
-    //         // max-width: 500px;
+        @include mq(700px) {
+                top: 25%;
+                right:0;
+                left:auto;
+                background-color: #00000081;
+                // transform: translateX(25px) translateY(-25px);
+                width: 45%;
 
-    //         h2{ 
-    //             font-size:40px; 
-    //         }
+            div{ 
+                
+                display: flex;
+                flex-direction: column;
+                z-index: 2;
+                 height: auto;
+                // left:55%; 
+                width:100%; 
+                padding: 1.5rem;
+            }
+            
+            // justify-content: space-between;
+            // max-width: 500px;
 
-    //         p,a{ 
-    //             font-size: 20px;
-    //         }
+            h2{ 
+                font-size:40px; 
+            }
 
-    //         a { 
-    //             display: block;
-    //             max-width: 200px;
-    //         }
+            p,a{ 
+                font-size: 20px;
+            }
+
+            a { 
+                display: block;
+                max-width: 200px;
+            }
         }
         
-    //     @include mq($laptop) {
-    //         top: 30%;
-    //         line-height: 4rem;
-    //         padding:2rem; 
-    //         row-gap: 1.5rem;
-    //         left:65%; 
-    //         height:45%;
+        @include mq($laptop) {
+            top: 30%;
+            line-height: 4rem;
+            padding:2rem; 
+            row-gap: 1.5rem;
+            
+            // height:45%;
 
-    //         h2{ 
-    //             font-size:50px; 
-    //         }
+            h2{ 
+                font-size:50px; 
+            }
 
-    //         p,a{ 
-    //             font-size: 30px;
-    //         }
+            p,a{ 
+                font-size: 30px;
+            }
 
-    //         a { 
-    //             font-size: 1.5rem;
-    //             display: block;
-    //             max-width: 200px;
-    //         }
-    //     }
-    // }
+            a { 
+                font-size: 1.5rem;
+                display: block;
+                max-width: 200px;
+            }
+        }
+    }
 
-    // @include mq($tablet) {
+    @include mq(700px) {
 
-    //     picture { 
-    //         filter: none; 
-    //     }
+        picture { 
+            filter: none; 
+        }
 
-    //     h2, 
-    //     p { 
-    //         font-size:1.5rem; 
-    //     }
+        h2, 
+        p { 
+            font-size:1.5rem; 
+        }
 
-    //     a { 
-    //         display: block;
-    //         max-width: 200px;
-    //     }
+        a { 
+            display: block;
+            max-width: 200px;
+        }
 
-    //     .feature-text { 
-    //         // display: flex;
-    //         // flex-direction: column;
-    //         // z-index: 2;
-    //         // top: 2rem;
-    //         // right: 0;
-    //         // padding: 2rem;
-    //         // background-color: #3d3d3d9f;
-    //         // max-width: 450px;
-    //     }
-    // }
+        .feature-text { 
+            // display: flex;
+            // flex-direction: column;
+            // z-index: 2;
+            // top: 2rem;
+            // right: 0;
+            // padding: 2rem;
+            // background-color: #3d3d3d9f;
+            // max-width: 450px;
+        }
+    }
 
     // OUR story 
     .story-text{ 

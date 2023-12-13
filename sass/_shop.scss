@@ -39,12 +39,15 @@
 .shop-by-cards {
   position: relative;
   margin: 0 1rem;
+  max-width: 350px;
+
   img {
     border-radius: 50%;
     display: block;
     object-fit: cover;
     z-index: 0;
     filter: brightness(60%);
+    width: 100%;
   }
 
   p {

@@ -4,7 +4,17 @@
 
 .feature-cards{ 
     position: relative;
-    margin:0; 
+    margin:0 auto;
+    align-items: center;
+
+
+    h2{ 
+        font-weight:400; 
+    }
+
+    p{ 
+        font-weight: 200;
+    }
 
     picture{
         min-width:100%; 
@@ -24,15 +34,13 @@
             width:100%;
            }
         
-        @include mq(700px) {
+        @include mq(600px) {
                 filter: none; 
             }
     } 
     
     // feature products
     .feature-text{ 
-
-        
         position: absolute; 
         top: 25px;
         left: 25px;
@@ -55,52 +63,66 @@
             text-transform: uppercase;
         }
 
+        @include mq(400px) { 
+            padding:1rem; 
+
+            h2{ 
+                font-size: 40px; 
+            }
+        }
+
+        @include mq(600px) { 
+            top: 22%;
+            right:0;
+            left:auto;
+            background-color: #00000081;
+            width: 47%;
+
+            h2{ 
+                font-size: 40px;
+            }
+        }
+
         @include mq(700px) {
-                top: 25%;
-                right:0;
-                left:auto;
-                background-color: #00000081;
-                // transform: translateX(25px) translateY(-25px);
-                width: 45%;
+            top: 20%;
+            right:0;
+            left:auto;
+            background-color: #00000081;
+            width: 45%;
 
             div{ 
-                
                 display: flex;
                 flex-direction: column;
                 z-index: 2;
                  height: auto;
-                // left:55%; 
                 width:100%; 
-                padding: 1.5rem;
+                padding: 1rem;
             }
-            
-            // justify-content: space-between;
-            // max-width: 500px;
 
             h2{ 
                 font-size:40px; 
             }
 
-            p,a{ 
+            p,a { 
                 font-size: 20px;
             }
 
             a { 
-                display: block;
-                max-width: 200px;
+                max-width: 150px;
             }
         }
-        
-        @include mq($laptop) {
-            top: 30%;
-            line-height: 4rem;
-            padding:2rem; 
-            row-gap: 1.5rem;
-            
-            // height:45%;
 
+        @include mq(850px) {
+            width:40%; 
+
+            p{ 
+                font-size:24px ;
+            }
+        }
+
+         @include mq(1000px) {
             h2{ 
-                font-size:50px; 
+                font-size:2.5rem; 
             }
 
             p,a{ 
@@ -108,38 +130,60 @@
             }
 
             a { 
-                font-size: 1.5rem;
-                display: block;
+                margin-top: 1.5rem;
                 max-width: 200px;
             }
         }
-    }
+        
+        @include mq($laptop) {
+            top: 20%;
+            line-height: 4rem;
+            padding:2rem; 
+            row-gap: 1.5rem;
 
-    @include mq(700px) {
+            h2{ 
+                font-size:3rem; 
+            }
 
-        picture { 
-            filter: none; 
+            p,a { 
+                font-size: 30px;
+            }
+
+            a { 
+                max-width: 200px;
+            }
         }
 
-        h2, 
-        p { 
-            font-size:1.5rem; 
+        @include mq(1400px) {
+            h2{ 
+                font-size:3.5rem; 
+            }
+
+            p,a{ 
+                font-size: 34px;
+            }
+
+            a { 
+                margin-top: 1rem;
+                max-width: 250px;
+            }
         }
 
-        a { 
-            display: block;
-            max-width: 200px;
-        }
+        @include mq(1600px) {
+            width:40%; 
+            padding:3rem; 
+            h2{ 
+                font-size:5rem; 
+            }
 
-        .feature-text { 
-            // display: flex;
-            // flex-direction: column;
-            // z-index: 2;
-            // top: 2rem;
-            // right: 0;
-            // padding: 2rem;
-            // background-color: #3d3d3d9f;
-            // max-width: 450px;
+            p,a{ 
+                font-size: 38px;
+            }
+
+            a { 
+                margin-top: 3rem;
+                max-width: 300px;
+            }
         }
     }
 
@@ -147,6 +191,7 @@
     .story-text{ 
         position: absolute; 
         top: 50%; 
+        // left:50%; 
         z-index: 1; 
         color:white; 
         text-align: center;
@@ -155,11 +200,15 @@
         padding: 2rem;
         margin:0 auto;
         align-items: center;
-        transform: translateY(-50%);
+        transform: translateY(-50%); //translateX(-50%);
         row-gap:10px; 
 
         h2{ 
-            font-size:2rem; 
+            font-weight: 600;
+        }
+
+        p{ 
+            font-weight: 400;
         }
 
         a { 
@@ -176,33 +225,84 @@
             text-transform: uppercase;
         }
 
+        @include mq(400px) { 
+            padding: 2rem 4rem; 
+            row-gap: 15px;
+
+            h2{ 
+                font-size: 40px; 
+            }
+        }
+
+        @include mq(600px){ 
+
+            h2{ 
+                font-size: 2.5rem;
+            }
+        }
+
         @include mq(750px){ 
-            max-width: 700px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
             row-gap:20px; 
     
             h2{ 
-                font-size: 2rem;
+                font-size: 3rem;
             }
 
             p{ 
-                font-size:1.5rem;
+                font-size:1.25rem;
             }
             
             a{ 
+                font-size:1.25rem;
                 max-width: 500px;
             }
         }
 
-        @include mq($laptop){ 
-            max-width: 700px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
+        @include mq(800px){
+            padding-right:5rem; 
+            padding-left:5rem; 
+         }
+
+        @include mq(900px){ 
+            row-gap:25px; 
+    
+            h2{ 
+                font-size: 3.5rem;
+            }
+
+            p,a { 
+                font-size:1.3rem;
+            }
+            
+            a{ 
+                max-width: 550px;
+            }
+        }
+
+        @include mq(1000px){ 
             row-gap:30px; 
     
             h2{ 
                 font-size: 4rem;
+            }
+
+            p,a{ 
+                font-size:1.4rem;
+            }
+            
+            a{ 
+                max-width: 600px;
+            }
+        }
+
+
+        @include mq($laptop){ 
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            row-gap:35px; 
+    
+            h2{ 
+                font-size: 4.25rem;
             }
     
             p,
@@ -211,8 +311,19 @@
             }
             
             a{ 
-                max-width: 600px;
+                max-width: 650px;
             }
         }
+
+        @include mq(1400px){
+            p,
+            a{ 
+                font-size: 1.75rem;
+            }
+            
+            a{ 
+                max-width: 700px;
+            }
+         }
     }
 }

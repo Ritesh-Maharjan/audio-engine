@@ -51,6 +51,7 @@
   }
 
   p {
+    padding:0.5rem; 
     position: absolute;
     top: 50%;
     left: 0;
@@ -64,6 +65,16 @@
   }
 
   @include mq($tablet) {
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include mq($laptop) {
+
+  }
+
+  @include mq($laptop) {
     p {
       font-size: 2rem;
     }

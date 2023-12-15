@@ -16,9 +16,9 @@ Using outside slick was a problem when it wasn't working as intended. We finally
 
 ### Technologies used
 
-HTML5
-CSS3
-SASS
-JavaScript
-jQuery
-Slick https://kenwheeler.github.io/slick/
+1. HTML5
+2. CSS3
+3. SASS
+4. JavaScript
+5. jQuery
+6. Slick https://kenwheeler.github.io/slick/

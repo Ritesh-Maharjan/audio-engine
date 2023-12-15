@@ -9,14 +9,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    @include mq($tablet){
+    @include mq(500px){
         .footer{
             flex-wrap: nowrap;
             flex-direction: column;
         }
     }
 
-    @include mq($tablet){
+    @include mq(500px){
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -29,7 +29,7 @@
         padding-bottom: 0.5rem;
     }
 
-    @include mq($tablet){
+    @include mq(500px){
         li{
             width: 100px;
         }

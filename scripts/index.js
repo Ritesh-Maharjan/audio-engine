@@ -5,28 +5,28 @@ $(function () {
 
 function handleSlick() {
   const windowWidth = $(window).width();
-
   callSlick(windowWidth, ".shop-slider", ".shop-prev", ".shop-next");
   callSlick(windowWidth, ".news-slider", ".news-prev", ".news-next");
 }
 
 // Check window size on resize
 $(window).resize(function () {
+  console.log("asd")
   handleSlick();
 });
 
 function callSlick(windowWidth, divContainer, prevBtn, nextBtn) {
-  if (windowWidth >= 500) {
+  if (windowWidth >= 768) {
     // Initialize Slick slider if it's not initialized
     if (!$(divContainer).hasClass("slick-initialized")) {
       $(divContainer).slick({
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [
           {
             breakpoint: 826,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 4,
               slidesToScroll: 1,
             },
           },
@@ -41,28 +41,6 @@ function callSlick(windowWidth, divContainer, prevBtn, nextBtn) {
       $(divContainer).slick("unslick");
     }
   }
-  // $(divContainer).slick({
-  //   centerMode: true,
-  //   centerPadding: "60px",
-  //   slidesToShow: 5,
-  //   prevArrow: $(prevBtn),
-  //   nextArrow: $(nextBtn),
-  //   responsive: [
-  //     {
-  //       breakpoint: 1200,
-  //       settings: {
-  //         // arrows: false,
-  //         // centerMode: true,
-  //         // centerPadding: "40px",
-  //         slidesToShow: 3,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 500,
-  //       settings: "unslick",
-  //     },
-  //   ],
-  // });
 }
 
 const bannerImg = document.getElementsByClassName("banner-img")[0];
@@ -132,10 +110,11 @@ bannerRight.addEventListener("click", (e) => {
 
 // header
 const body = document.body;
-const btnMenu = document.getElementById("btn-menu");
+const btnMenu = document.getElementById("btn-menu-container");
 const mainNav = document.getElementById("main-navigation");
 // const nav = document.getElementById("main-navigation");
 
+console.log(btnMenu)
 btnMenu.addEventListener("click", openMenu);
 btnMenu.addEventListener("mousedown", function (e) {
   e.preventDefault();
@@ -144,7 +123,6 @@ btnMenu.addEventListener("mousedown", function (e) {
 function openMenu() {
   body.classList.toggle("show");
   body.classList.add("animating");
-  // nav.classList.add('activated');
 }
 
 window.addEventListener("resize", function () {

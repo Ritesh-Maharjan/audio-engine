@@ -5,6 +5,10 @@
   position: relative;
   overflow: hidden;
 
+  i {
+    cursor: pointer;
+  }
+
   .image-container {
     display: flex;
     transition: 0.3s ease-in;
@@ -49,8 +53,8 @@
     gap: 0.5rem;
 
     span {
-      width: 1rem;
-      border: 4px solid $button-color;
+      cursor: pointer;
+      border: 6px solid $button-color;
       border-radius: 50%;
       opacity: 50%;
 

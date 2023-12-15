@@ -2,4 +2,11 @@
 
 body {
     font-family: $font-family-source;
+    background-color: grey;
+}
+
+.wrapper {
+    background-color: white;
+    max-width: 1400px;
+    margin: 0 auto;
 }

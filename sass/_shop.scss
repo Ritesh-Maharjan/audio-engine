@@ -19,7 +19,7 @@
     cursor: pointer;
   }
 
-  @include mq($tablet) {
+  @include mq(450px) {
     .fa-less-than,
     .fa-greater-than {
       display: block;
@@ -74,9 +74,9 @@
     text-align: center;
   }
 
-  @include mq($tablet) {
+  @include mq(450px) {
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
 

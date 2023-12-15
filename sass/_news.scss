@@ -3,18 +3,23 @@
 
 .news {
   margin: 1.5rem;
+  position: relative;
 
   i {
-    margin-top: 0.4rem;
+    margin-top: 0rem;
     display: none;
     cursor: pointer;
 
-    @include mq($tablet) {
+    @include mq(450px) {
       display: block;
       position: absolute;
       z-index: 1;
 
       @include arrow();
+    }
+
+    @include mq($tablet) {
+      margin-top: 0.4rem;
     }
   }
 
@@ -40,8 +45,10 @@
     align-items: center;
     padding: 1rem;
     position: relative;
+    width: 90%;
+    margin: 0 auto;
 
-    @include mq($tablet) {
+    @include mq(450px) {
       flex-direction: row;
       overflow: hidden;
     }
@@ -52,7 +59,7 @@
       justify-content: space-between;
       gap: 3rem;
 
-      @include mq($tablet){
+      @include mq(450px) {
         flex-direction: row;
       }
     }

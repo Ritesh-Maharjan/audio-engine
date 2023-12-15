@@ -1,7 +1,6 @@
-$(function () {
-  // Function to handle Slick initialization or destruction based on window width
+(function () {
   handleSlick();
-});
+})();
 
 function handleSlick() {
   const windowWidth = $(window).width();
@@ -11,37 +10,101 @@ function handleSlick() {
 
 // Check window size on resize
 $(window).resize(function () {
-  console.log("asd")
   handleSlick();
 });
 
 function callSlick(windowWidth, divContainer, prevBtn, nextBtn) {
-  if (windowWidth >= 768) {
-    // Initialize Slick slider if it's not initialized
-    if (!$(divContainer).hasClass("slick-initialized")) {
-      $(divContainer).slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        responsive: [
-          {
-            breakpoint: 826,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-        prevArrow: $(prevBtn),
-        nextArrow: $(nextBtn),
-      });
-    }
+  if (windowWidth >= 450) {
+      // Initialize Slick slider if it's not initialized
+      if (!$(divContainer).hasClass("slick-initialized")) {
+          setTimeout(function () {
+              $(divContainer).slick({
+                  slidesToShow: 6,
+                  slidesToScroll: 1,
+                  responsive: [
+                      {
+                          breakpoint: 1200,
+                          settings: {
+                              slidesToShow: 5,
+                              slidesToScroll: 1,
+                          },
+                      },
+                      {
+                          breakpoint: 1000,
+                          settings: {
+                              slidesToShow: 4,
+                              slidesToScroll: 1,
+                          },
+                      },
+                      {
+                          breakpoint: 700,
+                          settings: {
+                              slidesToShow: 3,
+                              slidesToScroll: 1,
+                          },
+                      },
+                  ],
+                  prevArrow: $(prevBtn),
+                  nextArrow: $(nextBtn),
+              });
+          }, 200);
+      }
   } else {
-    // Check if the slider is initialized before unslicking
-    if ($(divContainer).hasClass("slick-initialized")) {
-      $(divContainer).slick("unslick");
-    }
+      // Check if the slider is initialized before unslicking
+      if ($(divContainer).hasClass("slick-initialized")) {
+          setTimeout(function () {
+              $(divContainer).slick("unslick");
+          }, 200);
+      }
   }
 }
+
+
+// COPIED FROM CHAT GPT
+
+// $(document).ready(function () {
+//   // Function to initialize or unslick the Slick carousel based on screen width
+//   function toggleSlick() {
+//     var $shopSlider = $(".shop-slider");
+
+//     if ($(window).width() < 767 && $shopSlider.hasClass("slick-initialized")) {
+//       // Unslick if screen width is less than 767px and slick is initialized
+//       setTimeout(function () {
+//         $shopSlider.slick("unslick");
+//       }, 200); // Adjust the delay if needed
+//     } else if (
+//       $(window).width() >= 767 &&
+//       !$shopSlider.hasClass("slick-initialized")
+//     ) {
+//       // Initialize Slick if screen width is 767px or more and slick is not initialized
+//       setTimeout(function () {
+//         $shopSlider.slick({
+//           slidesToShow: 5,
+//           slidesToScroll: 1,
+//           responsive: [
+//             {
+//               breakpoint: 768,
+//               settings: {
+//                 slidesToShow: 4,
+//                 slidesToScroll: 1,
+//               },
+//             },
+//           ],
+//           prevArrow: $(".shop-prev"),
+//           nextArrow: $(".shop-next"),
+//         });
+//       }, 2); // Adjust the delay if needed
+//     }
+//   }
+
+//   // Initial check on page load
+//   toggleSlick();
+
+//   // Re-check on window resize
+//   $(window).resize(function () {
+//     toggleSlick();
+//   });
+// });
 
 const bannerImg = document.getElementsByClassName("banner-img")[0];
 const spanCircle = document.getElementsByClassName("circles")[0].children;
@@ -114,7 +177,7 @@ const btnMenu = document.getElementById("btn-menu-container");
 const mainNav = document.getElementById("main-navigation");
 // const nav = document.getElementById("main-navigation");
 
-console.log(btnMenu)
+console.log(btnMenu);
 btnMenu.addEventListener("click", openMenu);
 btnMenu.addEventListener("mousedown", function (e) {
   e.preventDefault();

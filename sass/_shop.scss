@@ -4,9 +4,19 @@
 .shop-by {
   position: relative;
 
+  .slider-container {
+    position: relative;
+  }
+
+  .slick-slider {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .fa-less-than,
   .fa-greater-than {
     display: none;
+    cursor: pointer;
   }
 
   @include mq($tablet) {
@@ -16,7 +26,7 @@
       position: absolute;
       font-size: 4rem;
       top: 50%;
-      margin-top: -1rem;
+      margin-top: -1.5rem;
       z-index: 1;
       @include arrow();
     }

@@ -11,27 +11,40 @@
   div:first-child {
     font-weight: bold;
     color: $button-color;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
 
   ul {
     display: flex;
-    margin: 1rem 0;
+    margin: 1rem 0 0;
     li {
       list-style: none;
       font-size: 2rem;
+      cursor: pointer;
 
       @include mq($laptop) {
         font-size: 3rem;
       }
-    }
-
-    &:last-child li {
-      color: $footer-text-color;
     }
   }
 
   div:last-child {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+
+    @include mq($tablet) {
+      flex-direction: row;
+    }
+
+    ul:last-child {
+      color: $footer-text-color;
+      font-size: 1.5rem;
+      i {
+        font-size: 2rem;
+        color: $bg-color;
+      }
+    }
   }
 }

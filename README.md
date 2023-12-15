@@ -13,3 +13,12 @@ This is an audio engine website where the demos was provided by the professor an
 
 Using outside slick was a problem when it wasn't working as intended. We finally managed to get it working albeit some issues through intense googling and chat gpt help.
 
+
+### Technologies used
+
+HTML5
+CSS3
+SASS
+JavaScript
+jQuery
+Slick https://kenwheeler.github.io/slick/

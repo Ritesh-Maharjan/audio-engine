@@ -9,7 +9,7 @@
     display: none;
   }
 
-  @include mq($tablet) {
+  @include mq(700px) {
     .fa-less-than,
     .fa-greater-than {
       display: block;
@@ -33,7 +33,7 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0 1rem;
+  // padding: 0 1rem;
 }
 
 .shop-by-cards {
@@ -64,15 +64,18 @@
     text-align: center;
   }
 
-  @include mq($tablet) {
+  @include mq(700px) {
     p {
       font-size: 1.25rem;
     }
   }
 
-  @include mq($laptop) {
-
+  @include mq(900px) {
+    p {
+      font-size: 1.5rem;
+    }
   }
+
 
   @include mq($laptop) {
     p {
